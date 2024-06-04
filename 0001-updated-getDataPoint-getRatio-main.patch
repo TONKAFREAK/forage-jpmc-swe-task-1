@@ -1,0 +1,107 @@
+From d400332cb2ec0affd742029e30067b4de45294a5 Mon Sep 17 00:00:00 2001
+From: TONKAFREAK <soloyjon27@gmail.com>
+Date: Tue, 4 Jun 2024 18:05:33 +0500
+Subject: [PATCH] updated getDataPoint, getRatio, main
+
+---
+ __pycache__/client3.cpython-312.pyc | Bin 0 -> 1948 bytes
+ client3.py                          |  29 +++++++++++++++++++---------
+ 2 files changed, 20 insertions(+), 9 deletions(-)
+ create mode 100644 __pycache__/client3.cpython-312.pyc
+
+diff --git a/__pycache__/client3.cpython-312.pyc b/__pycache__/client3.cpython-312.pyc
+new file mode 100644
+index 0000000000000000000000000000000000000000..e1fd795b09e12453ab54f102ae3f04406a5d6089
+GIT binary patch
+literal 1948
+zcmZuyO>7%Q6rQnn{S(`X^JAxOn`Zh)W12KcQGSRDs5EJ*P}3h0p)79A#yd&uI9_*l
+zO&ZsgBE+GnJ-FhKNL8iuM5;;<PFxTw6bT6=6eoqcQw|_by`>3<DqMK8wh5GuwC}xn
+z`{sMUv-_jZSA}3T)I`TV2k8&7sVrYv*znsBnnN1Wa1tpcjumX}ZHis9DUxPaWKH@A
+zDGp5r>ZC5sG1-C;`^ko=8=fjE-^C@o3hzhfzd}gyxDmWZiES0PTb$Yx+qZTVDbZAs
+zwm6j%&0D*Q1h_Z>u|L1=mKBvqDm=0Kc}s+zw^eH0XdEeZv=-v;g81vfi-XozFd`D@
+z8kB$%R2perqVxZVw6S7~Mdl&RNgHlr%|!!1-82ZaiZ%lE+;VSOUhk2F^>$iU(P`ev
+z2vm4GXq~i9Lm_Yl+$Z?ma@NWY%R@EYk#&H!+yRWPe=VUIJcIWlx^o|50j0^ZtD#Ld
+z(JkAS-3attX?m~e`Y$Cuji=Ei`v{uGVgD16+F*9~glVSx+S`+QOifPchS}HK(c95}
+zF+<tR8*%Nm%U9xmg5Ox#w>X5LM#v7&MheIra-$sh5piF^=0A3zvk9GMw=yd0uh{-$
+zA-%xDp0nlbS#eU%dH_?(VWG)MW70b)?8x?zGfdYqF-p{Al9&^eq$t&>Mm|uJ8EOzy
+zC*w3lnQDRs(Nt4S>+zIHxNMkuY?3=oJslm5Yg|sVc#M|zsxkRQ6g`Z&JeJf|Gc0rY
+zVn#P96WMY%9Eg_e-C$c188ihMG7uuxX791S$gn|~5g9r?`1a9AKQ$)7S!7IS>Nssn
+zq^DwS#x!j+0imrk5=+Ku%6#QedWL()so4*ao)M9<YCshC!59KEi++=i6uq_i10N60
+z4*cp5<mvp$Lhz-9=|Zr5)!#9D@<qC$FE}46`1UNQ1@D2`fuhHs56_P*%FCX%WvOig
+za8c~vS4+rNOT~?~T8cGneFE@|Er)Vgv;xX+&+Z{7s7au@ah>R6#HvYDC2C45%cFz|
+zw81+lY~#-I`-(7Xh<AiA@pa-ZNc)^XVhykj!(#~lrIel3`Q0DpiZ%5`PhI}qf@kNl
+zw3F3X$D+|GHJ*w_v(B@kMH<PviE5G-Xi{I+(Mq7ceOXs)DWJYh9A+*!_e9KK)@3;)
+z`;F|bqbZU}(MxF>6Bv{+oe@12%P>Z@J`&!=rG%lUxPw7*`V_Cuuw*hmdWccD9frvr
+zr9GF=4iB6g;dsz$oRtc9MWZQoibkVcio*<X88F5v$5AfBbZG{6R#2RPqNgdifiam<
+zO)fF2YTRKBpTQkg0SzX;^VTRbXar(jLB#lRhnj}drD;x?+@1s|@CHTY?tx1&ng%Jw
+zF=e&lh^U`c`%Tx8DY!*R`Z{X|ohXgb3UtkmG2VC?Veez)dyE2W4&-i~m4V5wS-dVe
+z@uBqw88@xfA<26+yJ8Rh?yJ4Ae;$9*a_z!8s*!uI;x${fySEr<&JWEgH<Sg(r`5Ns
+zACm3@>0ZiwnfoGl@6^5H-=F&C)cw<|JwvNx_#sgWL|G+~)xi0y$BW(*#XuwQQ1d#n
+z`zCN+e$;jJ-u~6Dw+jBlc{x9`5MCTE`h#=68@_q^z`u|C1K)Q25MCL+u<|}#4vzio
+zA768dlTWLVzdql6?ee_3Qq%ls8(9c0;@hFc<4c`)POfh224uKTiG{90u;qb2{OoB6
+z;$M@IwEfu{LH^J>!tUNj-rD7c!%Lk@dzb6FA9{NV-k!gpO77lGL;UnUd-K&}2W|Hc
+R%Kfr@zr)jy<nNG>{{~Kv=hFZH
+
+literal 0
+HcmV?d00001
+
+diff --git a/client3.py b/client3.py
+index 3fc09b7..3441967 100644
+--- a/client3.py
++++ b/client3.py
+@@ -28,32 +28,43 @@ QUERY = "http://localhost:8080/query?id={}"
+ # 500 server request
+ N = 500
+ 
+-
+ def getDataPoint(quote):
+     """ Produce all the needed values to generate a datapoint """
+     """ ------------- Update this function ------------- """
+     stock = quote['stock']
+     bid_price = float(quote['top_bid']['price'])
+     ask_price = float(quote['top_ask']['price'])
+-    price = bid_price
++    price = (bid_price + ask_price) / 2 
+     return stock, bid_price, ask_price, price
+ 
+ 
+ def getRatio(price_a, price_b):
+     """ Get ratio of price_a and price_b """
+     """ ------------- Update this function ------------- """
+-    return 1
++    if price_b == 0:
++        return None
++    return price_a / price_b
+ 
+ 
+ # Main
+ if __name__ == "__main__":
+     # Query the price once every N seconds.
+     for _ in iter(range(N)):
+-        quotes = json.loads(urllib.request.urlopen(QUERY.format(random.random())).read())
++        try :
++            quotes = json.loads(urllib.request.urlopen(QUERY.format(random.random())).read())
++            """ ----------- Update to get the ratio --------------- """
++            prices = []
++            for quote in quotes:
++                stock, bid_price, ask_price, price = getDataPoint(quote)
++                prices.append(price)
++                print("Quoted %s at (bid:%s, ask:%s, price:%s)" % (stock, bid_price, ask_price, price))
++
++            if len(prices) >= 2:
++                ratio = getRatio(prices[0], prices[1]) 
++                print("Ratio %s" % ratio)
++        
++        except Exception as e:
++            print(f"An unexpected error occurred: {e}")
+ 
+-        """ ----------- Update to get the ratio --------------- """
+-        for quote in quotes:
+-            stock, bid_price, ask_price, price = getDataPoint(quote)
+-            print("Quoted %s at (bid:%s, ask:%s, price:%s)" % (stock, bid_price, ask_price, price))
+ 
+-        print("Ratio %s" % getRatio(price, price))
++    
+-- 
+2.45.1.windows.1
+
